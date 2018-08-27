@@ -5,9 +5,9 @@
 	<title> Vue components</title>
 </head>
 <body>
+
 <div id="app">
-	<sidebar></sidebar>
-	<main-content></main-content>
+	<user></user>
 </div>
 
 
@@ -15,30 +15,22 @@
 
 <script>
 
-Vue.component('sidebar', {
+Vue.component('user', {
 	data(){
 		return {
 			name: 'Putheng'
 		}
 	},
-	template: `
-		<aside>{{ name }}</aside>
-
+	template:`
+		<div class="user">
+			{{ name }}
+		</div>
 	`
 })
 
-Vue.component('main-content', {
-	template: `
-		<div>Main content</div>
-	`
-})
 
 let app = new Vue({
-	el: '#app',
-	data: {
-		name: 'Putheng'
-	}
-
+	el: '#app'
 })
 
 </script>
