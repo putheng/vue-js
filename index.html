@@ -6,20 +6,40 @@
 </head>
 <body>
 <div id="app">
-	{{ name }}
+	<sidebar></sidebar>
+	<main-content></main-content>
 </div>
 
 
 <script src="https://unpkg.com/vue"></script>
 
 <script>
-	let app = new Vue({
-		el: '#app',
-		data: {
+
+Vue.component('sidebar', {
+	data(){
+		return {
 			name: 'Putheng'
 		}
+	},
+	template: `
+		<aside>{{ name }}</aside>
 
-	})
+	`
+})
+
+Vue.component('main-content', {
+	template: `
+		<div>Main content</div>
+	`
+})
+
+let app = new Vue({
+	el: '#app',
+	data: {
+		name: 'Putheng'
+	}
+
+})
 
 </script>
 </body>
